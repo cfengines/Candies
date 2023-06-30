@@ -55,7 +55,7 @@ let prices = [
 
 let generalVolume = 1;
 
-Play('sounds/music/music.mp4', generalvolume, true);
+Play('sounds/music/music.mp4', generalVolume, true);
 RefreshStatusCandies();
 
 const Sleep = (seconds) => {
