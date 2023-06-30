@@ -1,5 +1,3 @@
-document.body.style.cursor = "url(img/pics/cursor.png), auto";
-
 const candy = document.querySelector('#candy');
 const candiesstatus = document.querySelector('#candiesstatus');
 const sort = document.querySelector('#sort');
@@ -57,6 +55,7 @@ let prices = [
 
 let generalVolume = 1;
 
+Play('sounds/music/music.mp4', generalvolume, true);
 RefreshStatusCandies();
 
 const Sleep = (seconds) => {
