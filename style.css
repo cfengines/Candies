@@ -1,0 +1,596 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Belanosima;
+}
+
+:root {
+  --communicats: rgba(222, 170, 255, 0.766);
+  --shadowcommunicats: rgba(0, 0, 0, 0.493);
+  --communicatswhite: rgba(49, 45, 45);
+  --communicatwidth: 60%;
+  --communicatheight: 60%;
+}
+
+body {
+  background-image: linear-gradient(rgb(111, 60, 229), rgb(155, 97, 255));
+  background-image: url(img/backgrounds/confectionary2.png);
+  background-attachment: fixed;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(91, 0, 175);
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.425);
+  color: white;
+  padding: 10px;
+}
+
+#logo {
+  width: 40px;
+  height: 40px;
+}
+
+.icons {
+  filter: invert(100%);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: filter 0.3s;
+}.icons:hover {
+  filter: invert(0%);
+  transition: filter 0.3s;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#candyarea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+}
+
+#candy {
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.prevector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+}
+
+.vector {
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: brightness(100%) hue-rotate(60deg);
+}
+
+#vector0 {
+  animation: 50s ConstantRotate infinite;
+}
+
+#vector1 {
+  animation: 50s ConstantRotate infinite reverse;
+}
+
+#candies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 25%;
+  z-index: 1;
+  color: white;
+  background-color: rgb(81, 39, 120);
+  border-radius: 10px;
+  padding: 0 5px 0 5px;
+  border: 2px solid  blueviolet;
+  transition: 0.3 ease;
+}
+
+#numberofcandieslogo {
+  width: 30px;
+  height: 30px;
+  transition: 0.3 ease;
+}
+
+#status {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#prelist {
+  display: flex;
+  justify-content: end;
+}
+
+#list {
+  position: fixed;
+  z-index: 2;
+  background-color: rgb(125, 37, 233);
+  width: 375px;
+  height: 100%;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.425);
+  resize: horizontal;
+}
+
+#menu {
+  width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(91, 0, 175);
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.425);
+  color: white;
+  padding: 10px;
+}
+
+#close {
+  width: 40px;
+  height: 40px;
+  filter: invert(100%);
+  cursor: pointer;
+  transition: 0.3s;
+}#close:hover {
+  filter: invert(0);
+  transition: 0.3s;
+}
+
+#container {
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 90%;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#container::-webkit-scrollbar-track {
+  background-color: rgb(125, 37, 233);
+}
+
+#container::-webkit-scrollbar {
+width: 10px;
+background-color: #F5F5F5;
+}
+
+#container::-webkit-scrollbar-thumb {
+  background-color: rgb(111, 44, 173);
+  border-radius: 10px;
+}
+
+#upgrade0 {
+  margin-top: 20px;
+}
+
+#upgrade9 {
+  margin-bottom: 20px;
+}
+
+.upgrades {
+  background-color: rgb(81, 39, 120);
+  width: 300px;
+  height: 70px;
+  margin: 0 10px 10px 0;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 10px;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+}.upgrades:hover {
+  background-color: rgb(169, 77, 255);
+  transition: 0.3s;
+}
+
+.pics {
+  width: 50px;
+  height: 50px;
+}
+
+.elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.canbuy {
+  background-color: blueviolet;
+}
+
+.goldcandies {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 0;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease;
+  animation: GoldCandyAnimation 5s linear infinite;
+}
+
+#save {
+  display: none;
+  color: white;
+  position: absolute;
+  top: 75%;
+  animation: save 1s forwards;
+}
+
+.fallingcandie {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  animation: candyAnimation 10s linear infinite;
+}
+
+#communicats {
+  font-family: Roboto;
+}
+
+#precommunicat1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+}
+
+#communicat1 {
+  background-color: var(--communicats);
+  box-shadow: 1px 1px 10px 1px var(--shadowcommunicats);
+  border-radius: 5px;
+  position: absolute;
+  width: var(--communicatwidth);
+  height: var(--communicatheight);
+  padding: 20px;
+  z-index: 3;
+  position: fixed;
+  display: none;
+}
+
+.dialog {
+  float: right;
+  margin: 20px;
+  position: absolute;
+  top: 80%;
+}
+
+.cancel {
+  background-color: black;
+  border: 0;
+  padding: 10px;
+  width: 75px;
+  transition: 0.3s;
+  color: white;
+  font-family: Roboto;
+}.cancel:hover {
+  background-color: rgb(98, 98, 98);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.save {
+  background-color: blueviolet;
+  border: 0;
+  padding: 10px;
+  width: 75px;
+  transition: 0.3s;
+  color: white;
+  font-family: Roboto;
+}.save:hover {
+  background-color: rgb(120, 67, 170);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.title {
+  font-family: Roboto;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 200px;
+  height: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000;
+  background: #9a24e3;
+  border-radius: 1px;
+  border: 0px solid #000000;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #9024e3;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #b76aff;
+  cursor: pointer;
+  margin-top: -7px;
+  -webkit-appearance: none;
+}
+
+.sliderx::-ms-track {
+  cursor: pointer;
+}
+
+input[type=range] {
+  height: 25px;
+  margin: 10px 0;
+  width: 200px;
+  background-color: rgba(245, 222, 179, 0);
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 200px;
+  height: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000;
+  background: #9a24e3;
+  border-radius: 1px;
+  border: 0px solid #000000;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #9024e3;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #b76aff;
+  cursor: pointer;
+  margin-top: -7px;
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #7a24e3;
+}
+
+input[type=range]::-moz-range-track {
+  width: 200px;
+  height: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000;
+  background: #8424e3;
+  border-radius: 1px;
+  border: 0px solid #000000;
+}
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #2497E3;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+  width: 200px;
+  height: 5px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #9024e3;
+  border: 0px solid #000000;
+  border-radius: 2px;
+  box-shadow: 0px 0px 0px #000000;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #9a24e3;
+  border: 0px solid #000000;
+  border-radius: 2px;
+  box-shadow: 0px 0px 0px #000000;
+}
+
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #2497E3;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #d5a1ff;
+  cursor: pointer;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #7724e3;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #9d24e3;
+}
+
+.description {
+  font-family: Roboto;
+  margin-left: 5px;
+}
+
+.elements2 {
+  display: flex;
+  align-items: center;
+}
+
+@keyframes ConstantRotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes OpenList {
+  from {
+    transform: translate(375px);
+  }
+  to {
+    transform: translate(0px);
+  }
+}
+
+@keyframes CloseList {
+  from {
+    transform: translate(0px);
+  }
+  to {
+    transform: translate(375px);
+  }
+}
+
+@keyframes candyAnimation {
+  0% {
+    transform: translateY(-90%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(80vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes save {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes save2 {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes GoldCandyAnimation {
+  0% {
+    transform: translateX(-90%) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(150vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes GoldCandyAnimation2 {
+  0% {
+    transform: translateX(-90%) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(48vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes anim1 {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+      top:60%;
+  }
+}
+
+@keyframes anim2 {
+  from {
+      opacity: 0;
+      top:60%;
+  }
+  to {
+      opacity: 1;
+      top:50%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .goldcandies {
+    animation: GoldCandyAnimation2 5s linear infinite;
+  }
+}
